@@ -9,10 +9,20 @@ public class SectionTest extends student.TestCase {
         
     }
     
-    public void testMethods() {
-        sec.insert(new Student("James", "Bond"));
+    public void testSecNum() {
+        sec.setSecNum(5);
+        assertEquals(5, sec.getSecNum());
+        
+    }
+    
+    public void testSecId() {
+        sec.setId(2);
+        assertEquals(2, sec.getId());
+    } 
+    
+    public void testInsert() {
         sec.insert(new Student("Orenthal", "James"));
-        System.out.println(sec.toString());
+        assertEquals("(Orenthal James)", sec.toString());
     }
     
     
