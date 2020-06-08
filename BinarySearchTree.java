@@ -1,17 +1,16 @@
+package Proj1;
 
-public interface BinarySearchTree<T> {
 
-    public void insert(T x);
+public  interface  BinarySearchTree<T> {
+        public  void insert(T x);
 
-    public void remove(student x);
+        public void remove(T x);
 
-    public student findMin();
+        public T find(T x);
 
-    public student findMax();
+        public void makeEmpty();
 
-    public T find(T x);
+        public boolean isEmpty();
+    
 
-    public void makeEmpty();
-
-    public boolean isEmpty();
 }
