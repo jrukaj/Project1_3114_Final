@@ -13,7 +13,7 @@ public class CommandParser<E> {
 	private File file;
 	private ArrayList<ArrayList<String>> commands;
 	private Scanner scan;
-	private Proj1BST tree;
+	private BST tree;
 	/**
 	 * CmdProcessor constructor
 	 */
@@ -31,11 +31,11 @@ public class CommandParser<E> {
 			scan = new Scanner(file);
 		}
 		catch (Exception e) {
-			System.out.println("The file you are trying to open does not exist bröther.\n");
+			System.out.println("The file you are trying to open does not exist brÃ¶ther.\n");
 			e.printStackTrace();
 			System.exit(0);
 		}
-		tree = new Proj1BST();
+		tree = new BST();
 		commands = new ArrayList<ArrayList<String>>();
 	}
 	
