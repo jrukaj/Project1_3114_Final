@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Section<T> {
 
-    private BST tree;
+    public BST tree;
     private int secNum = 1;
     private int id;
     
@@ -13,19 +13,23 @@ public class Section<T> {
     private boolean flag3 = false;
     
     /**
-     * Section constructor
+     * Section constructor  
      */ 
-    public Section() { 
+    public Section() {  
         tree = new BST();
-    }
-    
-    public void insert(T x) {
-        tree.insert((Comparable)x);
     } 
+     
+    public void insert(T x) { 
+        tree.insert((Comparable)x);  
+    } 
+    
+    public void insertScore(T x, int score) {
+        tree.updateScore((Comparable)x, score);
+    }
     
     public String toString() {
         return tree.toString();
-    }
+    } 
     
     public ArrayList<ArrayList<String>> getSection(ArrayList<ArrayList<String>> list) {
         ArrayList<ArrayList<String>> secList = new ArrayList<ArrayList<String>>();
@@ -45,7 +49,7 @@ public class Section<T> {
             else if (strList.get(0).equals("section") && strList.get(1).equals("3")) {
                 flag1 = false;
                 flag2 = false;
-                flag3 = true;
+                flag3 = true; 
             }
             secList.add(strList);
             // use boolean flags to determine what section we are in
@@ -61,7 +65,15 @@ public class Section<T> {
         this.secNum = val;
     }
     
+    public int getSecNum() {
+        return this.secNum;
+    }
+    
     public void setId(int val) {
         this.id = val;
+    }
+    
+    public int getId() {
+        return this.id;
     }
 }
