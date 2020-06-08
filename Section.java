@@ -2,7 +2,7 @@ package Proj1;
 
 import java.util.ArrayList;
 
-public class Section {
+public class Section<T> {
 
     private BST tree;
     private int secNum = 1;
@@ -14,9 +14,17 @@ public class Section {
     
     /**
      * Section constructor
-     */
+     */ 
     public Section() { 
         tree = new BST();
+    }
+    
+    public void insert(T x) {
+        tree.insert((Comparable)x);
+    } 
+    
+    public String toString() {
+        return tree.toString();
     }
     
     public ArrayList<ArrayList<String>> getSection(ArrayList<ArrayList<String>> list) {
@@ -47,5 +55,13 @@ public class Section {
         }
         
         return secList;
+    }
+    
+    public void setSecNum(int val) {
+        this.secNum = val;
+    }
+    
+    public void setId(int val) {
+        this.id = val;
     }
 }
